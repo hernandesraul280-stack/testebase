@@ -1,24 +1,5 @@
-// Mobile navigation + scroll reveal for the Faculdade Sofia landing page.
+// Scroll reveal for the content sections below the hero.
 (function () {
-  var toggle = document.getElementById("navToggle");
-  var nav = document.getElementById("menuPrincipal");
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.querySelector(".sr-only").textContent = open ? "Fechar menu" : "Abrir menu";
-    });
-
-    nav.addEventListener("click", function (event) {
-      if (event.target.closest("a") && nav.classList.contains("open")) {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.querySelector(".sr-only").textContent = "Abrir menu";
-      }
-    });
-  }
-
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var items = document.querySelectorAll(".reveal");
 
